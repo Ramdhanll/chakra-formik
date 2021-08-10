@@ -1,10 +1,16 @@
 # How to use
 
+### Import Dependecies
+
 ```
 import {formik, form} from 'formik'
 import \* as Yup from 'yup'
 import FormikControl from '../Formik/FormikControl'
+```
 
+### Create Validation Schema
+
+```
 const validationSchema = Yup.object({
 nis: Yup.number()
 .required('NIS diperlukan')
@@ -27,7 +33,11 @@ email: Yup.string()
 .required('Email diperlukan')
 .email('Email tidak valid'),
 })
+```
 
+### Use
+
+```
 <Formik
 initialValues={{
       nis: student.nis || '',

@@ -2,6 +2,7 @@ import React from 'react'
 import FormikInput from './FormikInput'
 import FormikRadioButton from './FormikRadioButton'
 import FormikSelect from './FormikSelect'
+import FormikTextArea from './FormikTextArea'
 
 const FormikControl = (props) => {
    const { control, ...rest } = props
@@ -9,8 +10,8 @@ const FormikControl = (props) => {
    switch (control) {
       case 'input':
          return <FormikInput {...rest} />
-      // case 'textarea':
-      //    return <Textarea {...rest} />
+      case 'textarea':
+         return <FormikTextArea {...rest} />
       case 'select':
          return <FormikSelect {...rest} />
       case 'radio':

@@ -30,9 +30,11 @@ name: Yup.string().required('Nama diperlukan'),
 gender: Yup.string().required('Jenis kelamin diperlukan'),
 year_of_entry: Yup.string().required('Tahun ajaran diperlukan'),
 email: Yup.string()
-.required('Email diperlukan')
-.email('Email tidak valid'),
-})
+            .required('Email diperlukan')
+            .email('Email tidak valid'),
+      })
+
+
 ```
 
 ### Use

@@ -11,7 +11,6 @@ import FormikControl from '../Formik/FormikControl'
 ### Create Validation Schema
 
 ```
-<pre>
 
 const validationSchema = Yup.object({
       nis: Yup.number()
@@ -37,7 +36,6 @@ email: Yup.string()
       })
 
 
-</pre>
 ```
 
 ### Use

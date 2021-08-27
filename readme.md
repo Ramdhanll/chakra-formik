@@ -20,12 +20,12 @@ const validationSchema = Yup.object({
          }
       }),
 nisn: Yup.number()
-.required('NISN diperlukan')
-.test('is-10', 'Harus memiliki 10 character', (value) => {
-if (!isNaN(value)) {
-return value.toString().length === 10
-}
-}),
+         .required('NISN diperlukan')
+         .test('is-10', 'Harus memiliki 10 character', (value) => {
+            if (!isNaN(value)) {
+               return value.toString().length === 10
+            }
+         }),
 name: Yup.string().required('Nama diperlukan'),
 gender: Yup.string().required('Jenis kelamin diperlukan'),
 year_of_entry: Yup.string().required('Tahun ajaran diperlukan'),
@@ -202,4 +202,19 @@ onSubmit={submitHandler}
 
 )}
 </Formik>
+```
+
+### USE TEXT EDITOR
+
+```
+npm i draft-js react-draft-wysiwyg draft-js-export-html
+
+ <FormikControl
+   control='textEditor'
+   name='body'
+   label='Body'
+   required={true}
+   body={props.values?.body}
+/>
+
 ```

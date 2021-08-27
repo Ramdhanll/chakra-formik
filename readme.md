@@ -11,28 +11,33 @@ import FormikControl from '../Formik/FormikControl'
 ### Create Validation Schema
 
 ```
+<pre>
+
 const validationSchema = Yup.object({
-nis: Yup.number()
-.required('NIS diperlukan')
-.test('is-10', 'Harus memiliki 10 character', (value) => {
-if (!isNaN(value)) {
-return value.toString().length === 10
-}
-}),
-nisn: Yup.number()
-.required('NISN diperlukan')
-.test('is-10', 'Harus memiliki 10 character', (value) => {
-if (!isNaN(value)) {
-return value.toString().length === 10
-}
+      nis: Yup.number()
+            .required('NIS diperlukan')
+            .test('is-10', 'Harus memiliki 10 character', (value) => {
+                  if (!isNaN(value)) {
+                        return value.toString().length === 10
+                  }
+            }),
+      nisn: Yup.number()
+            .required('NISN diperlukan')
+            .test('is-10', 'Harus memiliki 10 character', (value) => {
+                  if (!isNaN(value)) {
+                  return value.toString().length === 10
+            }
 }),
 name: Yup.string().required('Nama diperlukan'),
 gender: Yup.string().required('Jenis kelamin diperlukan'),
 year_of_entry: Yup.string().required('Tahun ajaran diperlukan'),
 email: Yup.string()
-.required('Email diperlukan')
-.email('Email tidak valid'),
-})
+            .required('Email diperlukan')
+            .email('Email tidak valid'),
+      })
+
+
+</pre>
 ```
 
 ### Use

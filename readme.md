@@ -12,13 +12,13 @@ import FormikControl from '../Formik/FormikControl'
 
 ```
 const validationSchema = Yup.object({
-nis: Yup.number()
-.required('NIS diperlukan')
-.test('is-10', 'Harus memiliki 10 character', (value) => {
-if (!isNaN(value)) {
-return value.toString().length === 10
-}
-}),
+   nis: Yup.number()
+      .required('NIS diperlukan')
+      .test('is-10', 'Harus memiliki 10 character', (value) => {
+         if (!isNaN(value)) {
+            return value.toString().length === 10
+         }
+      }),
 nisn: Yup.number()
 .required('NISN diperlukan')
 .test('is-10', 'Harus memiliki 10 character', (value) => {

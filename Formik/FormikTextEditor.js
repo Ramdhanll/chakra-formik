@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Field, ErrorMessage } from 'formik'
+import { Field } from 'formik'
 import {
    FormControl,
    FormErrorMessage,
    FormLabel,
    Input,
-   Skeleton,
 } from '@chakra-ui/react'
 
 import { EditorState, convertFromHTML, ContentState } from 'draft-js'
@@ -14,15 +13,7 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import { stateToHTML } from 'draft-js-export-html'
 
 function FormikTextEditor(props) {
-   const {
-      label,
-      name,
-      type = 'text',
-      validate,
-      required,
-      body,
-      ...rest
-   } = props
+   const { label, name, validate, required, body, ...rest } = props
 
    const [editorState, setEditorState] = useState(() =>
       EditorState.createEmpty()
@@ -40,7 +31,7 @@ function FormikTextEditor(props) {
 
          setEditorState(EditorState.createWithContent(state))
       }
-   }, [])
+   }, [body])
 
    return (
       <Field name={name} validate={validate}>
@@ -58,7 +49,7 @@ function FormikTextEditor(props) {
                      minHeight: '140px',
                   }}
                   onChange={(e) => {
-                     form.setFieldValue('body', editorHTML)
+                     form.setFieldValue(name, editorHTML)
                   }}
                   editorState={editorState}
                   toolbarClassName='toolbarClassName'
